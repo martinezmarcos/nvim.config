@@ -72,4 +72,5 @@ keymap("n", "<leader>fb", require'telescope.builtin'.buffers, opts)
 keymap("n", "<leader>fh", require'telescope.builtin'.help_tags, opts)
 
 -- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>t", ":NvimTreeToggle<cr>", opts)
+
