@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 mason_lspconfig.setup({
-  ensure_installed = { "sumneko_lua", "rust_analyzer", "pyright" }
+  ensure_installed = { "lua_ls", "rust_analyzer", "pyright" }
 })
 
 local path = require('lspconfig/util').path
