@@ -41,9 +41,9 @@ mason_lspconfig.setup_handlers {
       opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
     end
 
-    if server_name == "sumneko_lua" then
-      local sumneko_opts = require("user.lsp.settings.sumneko")
-      opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+    if server_name == "lua_ls" then
+      local lua_ls_opts = require("user.lsp.settings.lua_ls")
+      opts = vim.tbl_deep_extend("force", lua_ls_opts, opts)
     end
 
     if server_name == "pyright" then
