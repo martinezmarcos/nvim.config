@@ -51,6 +51,11 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use 'nvim-lualine/lualine.nvim'
+  use {
+      "nvim-neorg/neorg",
+      requires = "nvim-lua/plenary.nvim",
+      run = ":Neorg sync-parsers",
+  }
 
   -- Colorschemes
   use 'folke/tokyonight.nvim'
