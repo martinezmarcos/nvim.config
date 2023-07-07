@@ -10,6 +10,10 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+local function add_desc(desc)
+  return vim.tbl_extend("force", opts, { desc = desc})
+end
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -25,6 +29,16 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+keymap("n", "<leader>ws", "<C-w>s", add_desc("Split window horizontally"))
+keymap("n", "<leader>wv", "<C-w>v", add_desc("Split window vertically"))
+
+keymap("n", "<leader>wc", "<C-w>c", add_desc("Close current window"))
+
+keymap("n", "<leader>wh", "<C-w>h", add_desc("Move cursor, window left"))
+keymap("n", "<leader>wj", "<C-w>j", add_desc("Move cursor, window below"))
+keymap("n", "<leader>wk", "<C-w>k", add_desc("Move cursor, window above"))
+keymap("n", "<leader>wl", "<C-w>l", add_desc("Move cursor, window right"))
+
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
 -- Resize with arrows
@@ -34,8 +48,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<leader>bl", ":bnext<CR>", add_desc("Next buffer"))
+keymap("n", "<leader>bh", ":bprevious<CR>", add_desc("Previous buffer"))
 
 -- Insert --
 -- Press jk fast to enter
@@ -66,10 +80,10 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope --
-keymap("n", "<leader>ff", require'telescope.builtin'.find_files, opts)
-keymap("n", "<leader>fg", require'telescope.builtin'.live_grep, opts)
-keymap("n", "<leader>fb", require'telescope.builtin'.buffers, opts)
-keymap("n", "<leader>fh", require'telescope.builtin'.help_tags, opts)
+keymap("n", "<leader>ff", require'telescope.builtin'.find_files, add_desc("Find files"))
+keymap("n", "<leader>fg", require'telescope.builtin'.live_grep, add_desc("Live grep"))
+keymap("n", "<leader>fb", require'telescope.builtin'.buffers, add_desc("Find buffers"))
+keymap("n", "<leader>fh", require'telescope.builtin'.help_tags, add_desc("Find in help tags"))
 
 -- Nvimtree
 keymap("n", "<leader>t", ":NvimTreeToggle<cr>", opts)

@@ -56,11 +56,13 @@ return packer.startup(function(use)
       requires = "nvim-lua/plenary.nvim",
       run = ":Neorg sync-parsers",
   }
+  use "folke/which-key.nvim"
 
   -- Colorschemes
   use 'folke/tokyonight.nvim'
   use "savq/melange"
   use "ellisonleao/gruvbox.nvim"
+  use "neanias/everforest-nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"         -- The completion plugin
