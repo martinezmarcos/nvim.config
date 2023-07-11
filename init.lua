@@ -15,3 +15,6 @@ require "user.lualine"
 require "user.git-conflict"
 require "user.neorg"
 require "user.which-key"
+
+require "nfnl"
+require "config"

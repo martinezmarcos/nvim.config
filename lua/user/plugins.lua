@@ -57,6 +57,7 @@ return packer.startup(function(use)
       run = ":Neorg sync-parsers",
   }
   use "folke/which-key.nvim"
+  use "Olical/nfnl"
 
   -- Colorschemes
   use 'folke/tokyonight.nvim'
