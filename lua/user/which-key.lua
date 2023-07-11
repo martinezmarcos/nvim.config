@@ -19,6 +19,12 @@ which_key.register {
 }
 
 which_key.register {
+  ["<leader>g"] = {
+    name = "+git"
+  }
+}
+
+which_key.register {
   ["<leader>w"] = {
     name = "+window"
   }

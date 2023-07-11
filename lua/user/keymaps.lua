@@ -23,6 +23,7 @@ end
 --   command_mode = "c",
 
 -- Normal --
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -39,7 +40,18 @@ keymap("n", "<leader>wj", "<C-w>j", add_desc("Move cursor, window below"))
 keymap("n", "<leader>wk", "<C-w>k", add_desc("Move cursor, window above"))
 keymap("n", "<leader>wl", "<C-w>l", add_desc("Move cursor, window right"))
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+
+-- Gitsigns
+
+keymap("n", "<leader>gs", require("gitsigns").stage_hunk, add_desc("Stage hunk"))
+keymap("n", "<leader>gu", require("gitsigns").stage_hunk, add_desc("Undo stage hunk"))
+keymap("v", "<leader>gs", function() require("gitsigns").stage_hunk {vim.fn.line("."), vim.fn.line("v")} end, add_desc("Stage hunk"))
+keymap("v", "<leader>gu", function() require("gitsigns").stage_hunk {vim.fn.line("."), vim.fn.line("v")} end, add_desc("Undo stage hunk"))
+keymap("n", "<leader>gr", require("gitsigns").reset_hunk, add_desc("Reset hunk"))
+keymap("n", "<leader>gS", require("gitsigns").stage_hunk, add_desc("Stage buffer"))
+keymap("n", "<leader>gR", require("gitsigns").reset_buffer, add_desc("Reset buffer"))
+keymap("n", "<leader>gp", require("gitsigns").preview_hunk, add_desc("Preview hunk"))
+keymap("n", "<leader>gb", require("gitsigns").toggle_current_line_blame, add_desc("Toggle current line blame"))
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
