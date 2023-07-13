@@ -1,3 +1,0 @@
-(print "howdy from fennel")
-
-{}

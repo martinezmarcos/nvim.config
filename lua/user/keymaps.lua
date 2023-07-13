@@ -63,9 +63,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<leader>bl", ":bnext<CR>", add_desc("Next buffer"))
 keymap("n", "<leader>bh", ":bprevious<CR>", add_desc("Previous buffer"))
 
--- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
